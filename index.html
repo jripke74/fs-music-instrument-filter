@@ -15,9 +15,21 @@
       going to add functionality to this static page so you'll be able to filter the 
       instruments depending on their family.
 
-      Start by creating a dropdown menu with the class of select-container. -->
-      
-      <button class="select-container"></button>
+      Start by creating a dropdown menu with the class of select-container. 
+      -->
+
+      <!-- Step 2
+      Now add four options to your dropdown, All, Woodwinds, Brass, and Percussion, in 
+      this order. For each option, use the lowercase option to specify the id attribute 
+      and the value attribute. 
+      -->
+
+      <select class="select-container">
+        <option value="all" id="all">All</option>
+        <option value="woodwinds" id="woodwinds">Woodwinds</option>
+        <option value="brass" id="brass">Brass</option>
+        <option value="percussion" id="percussion">Percussion</option>
+      </select>
 
       <div class="products-container">
         <div class="card">
@@ -64,5 +76,11 @@
         </div>
       </div>
     </main>
+    <!-- Step 3
+    Before starting to add the filter functionality to your page, link your script.js 
+    file to the HTML. 
+    -->
+
+    <script src="script.js"></script>
   </body>
 </html>
