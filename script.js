@@ -84,6 +84,15 @@ selectContainer.addEventListener("change", function () {
 // strings should have this format
 // <div class="card"><h2>[instrument]</h2><p>$[price]</p></div>
 
+// Step 14
+// When you select a category from the dropdown menu, the
+// instrument cards are correctly filtered and displayed on the
+// page, but you have to get rid of those commas in between the
+// cards.
+
+// Do it by joining the array returned by instrumentCards. With
+// that, your music instrument filter is complete.
+
 function instrumentCards(instrumentCategory) {
   const instruments =
     instrumentCategory === "all"
@@ -91,16 +100,26 @@ function instrumentCards(instrumentCategory) {
       : instrumentsArr.filter(
           ({ category }) => category === instrumentCategory
         );
-  const finalArr = [];
-  for (let i = 0; i < instruments.length; i++) {
-    finalArr.push(
-      `<div class="card"><h2>${instruments[i].instrument}</h2><p>$${instruments[i].price}</p></div>`
-    );
-  }
-
-  return finalArr;
+  return instruments
+    .map(({ instrument, price }) => {
+      return `
+              <div class="card">
+                <h2>${instrument}</h2>
+                <p>$${price}</p>
+              </div>
+            `;
+    })
+    .join("");
 }
 
+// Step 13
+// Remove your console.log from the event listener and set the
+// inner HTML of productsContainer to the result of calling
+// instrumentCards with the selected category option.
+
+// Then, select different options from your dropdown and see the
+// result in the preview window.
+
 selectContainer.addEventListener("change", () => {
-  console.log(instrumentCards(selectContainer.value));
+  productsContainer.innerHTML = instrumentCards(selectContainer.value);
 });
