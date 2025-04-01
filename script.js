@@ -47,9 +47,41 @@ const productsContainer = document.querySelector(".products-container");
 // correctly.
 
 // Step 9
-// Modify your console.log call to log the selected value from the 
+// Modify your console.log call to log the selected value from the
 // dropdown.
 
 selectContainer.addEventListener("change", function () {
   console.log(selectContainer.value);
+});
+
+// Step 10
+// To implement the filter functionality, you'll need a function.
+// Declare an empty function named instrumentCards that takes a
+// single parameter.
+
+// Step 11
+// Within your new function, you need to filter the instruments
+// depending on the selected category.
+
+// Filter out items from instrumentsArr and make your function
+// return an array containing the instrument objects with the same
+// category of instrumentCategory. If instrumentCategory is equal
+// to all, return the whole instrumentsArr array.
+
+// Then, remove the console.log from the callback of your event
+// listener and log the result of calling instrumentCards with the
+// selected option from the dropdown menu as argument so you can
+// test your function selecting different category options.
+
+function instrumentCards(instrumentCategory) {
+  if (instrumentCategory === "all") {
+    return instrumentsArr; // Return the whole array if "all" is selected
+  }
+  return instrumentsArr.filter(
+    (instrument) => instrument.category === instrumentCategory
+  );
+}
+
+selectContainer.addEventListener("change", () => {
+  console.log(instrumentCards(selectContainer.value));
 });
