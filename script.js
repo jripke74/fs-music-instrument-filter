@@ -73,13 +73,32 @@ selectContainer.addEventListener("change", function () {
 // selected option from the dropdown menu as argument so you can
 // test your function selecting different category options.
 
+// Step 12
+// Currently, your instrumentCards function returns an array with
+// instrument objects, so you'll need another couple of steps before
+// you can display your instrument cards on the page.
+
+// Modify your function so that it returns an array of strings
+// containing the HTML code to display the instrument cards, each
+// string corresponding to an object in the instruments array. The
+// strings should have this format
+// <div class="card"><h2>[instrument]</h2><p>$[price]</p></div>
+
 function instrumentCards(instrumentCategory) {
-  if (instrumentCategory === "all") {
-    return instrumentsArr; // Return the whole array if "all" is selected
+  const instruments =
+    instrumentCategory === "all"
+      ? instrumentsArr
+      : instrumentsArr.filter(
+          ({ category }) => category === instrumentCategory
+        );
+  const finalArr = [];
+  for (let i = 0; i < instruments.length; i++) {
+    finalArr.push(
+      `<div class="card"><h2>${instruments[i].instrument}</h2><p>$${instruments[i].price}</p></div>`
+    );
   }
-  return instrumentsArr.filter(
-    (instrument) => instrument.category === instrumentCategory
-  );
+
+  return finalArr;
 }
 
 selectContainer.addEventListener("change", () => {
