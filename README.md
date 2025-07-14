@@ -23,3 +23,19 @@ Add a first object representing the flute to your array. For the values use wood
 
 Step 6
 Add another two objects to your instrumentsArr to represent the remaining woodwinds instruments, clarinet and oboe.
+
+Step 7
+The remaining instruments have been added for you to the instrumentsArr array.
+
+Now, declare two variables selectContainer and productsContainer and assign them your HTML dropdown and the element with the class products-container, respectively.
+
+Step 8
+As you learned in the previous lesson videos, the change event is triggered when the user modifies the value of certain input elements. You want to be able to update your page any time that a new value is picked from the dropdown menu. For that, add an event listener for the change event to selectContainer.
+
+For now, inside the callback, log the string this is a test to the console. Then, select different options from your dropdown menu and check the console to test that the event listener works correctly.
+
+Step 9
+Modify your console.log call to log the selected value from the dropdown.
+
+Step 10
+To implement the filter functionality, you'll need a function. Declare an empty function named instrumentCards that takes a single parameter.
