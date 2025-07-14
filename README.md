@@ -51,3 +51,13 @@ Step 12
 Currently, your instrumentCards function returns an array with instrument objects, so you'll need another couple of steps before you can display your instrument cards on the page.
 
 Modify your function so that it returns an array of strings containing the HTML code to display the instrument cards, each string corresponding to an object in the instruments array. The strings should have this format <div class="card"><h2>[instrument]</h2><p>$[price]</p></div>
+
+Step 13
+Remove your console.log from the event listener and set the inner HTML of productsContainer to the result of calling instrumentCards with the selected category option.
+
+Then, select different options from your dropdown and see the result in the preview window.
+
+Step 14
+When you select a category from the dropdown menu, the instrument cards are correctly filtered and displayed on the page, but you have to get rid of those commas in between the cards.
+
+Do it by joining the array returned by instrumentCards. With that, your music instrument filter is complete.
