@@ -39,3 +39,15 @@ Modify your console.log call to log the selected value from the dropdown.
 
 Step 10
 To implement the filter functionality, you'll need a function. Declare an empty function named instrumentCards that takes a single parameter.
+
+Step 11
+Within your new function, you need to filter the instruments depending on the selected category.
+
+Filter out items from instrumentsArr and make your function return an array containing the instrument objects with the same category of instrumentCategory. If instrumentCategory is equal to all, return the whole instrumentsArr array.
+
+Then, remove the console.log from the callback of your event listener and log the result of calling instrumentCards with the selected option from the dropdown menu as argument so you can test your function selecting different category options.
+
+Step 12
+Currently, your instrumentCards function returns an array with instrument objects, so you'll need another couple of steps before you can display your instrument cards on the page.
+
+Modify your function so that it returns an array of strings containing the HTML code to display the instrument cards, each string corresponding to an object in the instruments array. The strings should have this format <div class="card"><h2>[instrument]</h2><p>$[price]</p></div>

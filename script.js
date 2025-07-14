@@ -39,16 +39,17 @@ function instrumentCards(instrumentCategory) {
       : instrumentsArr.filter(
           ({ category }) => category === instrumentCategory
         );
-  return instruments
-    .map(({ instrument, price }) => {
-      return `
-              <div class="card">
-                <h2>${instrument}</h2>
-                <p>$${price}</p>
-              </div>
-            `;
-    })
-    .join("");
+  let finalString = "";
+  let finalArr = [];
+  let instrument = "";
+  let price = "";
+  for (let i = 0; i < instruments.length; i++) {
+    instrument = instruments[i].instrument;
+    price = instruments[i].price;
+    finalString = `<div class="card"><h2>${instrument}</h2><p>$${price}</p></div>`;
+    finalArr.push(finalString);
+  }
+  return finalArr;
 }
 
 selectContainer.addEventListener("change", () => {
